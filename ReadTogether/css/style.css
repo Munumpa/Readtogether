@@ -1,0 +1,177 @@
+/* ===================================================================
+ * STYLE.CSS - ไฟล์สไตล์ชีตหลักสำหรับโปรเจกต์ ReadTogether
+ * -------------------------------------------------------------------
+ * Theme: Cyborg Gaming
+ * Primary Colors: #1f2122 (BG), #27292a (Surface), #e75e8d (Accent)
+ * Main Font: 'Prompt'
+ * CSS Framework: Bootstrap 5.3
+ * =================================================================== */
+
+
+/* ===================================================================
+   1. GLOBAL & BOOTSTRAP OVERRIDES
+   =================================================================== */
+
+/* --- ตั้งค่าตัวแปรหลักของ Bootstrap --- */
+:root {
+  --bs-body-font-family: 'Prompt', sans-serif;
+}
+
+/* --- สไตล์พื้นฐานของทั้งเว็บไซต์ --- */
+body {
+    background-color: #1f2122;
+    color: #fff;
+}
+
+a {
+    color: #e75e8d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+}
+
+/* ทำให้เส้น hr มีสีเข้ากับธีม */
+hr {
+    border-color: #444;
+}
+
+/* --- เขียนทับสไตล์ของ Bootstrap Card ให้เข้ากับธีม Cyborg --- */
+.card {
+    border: 1px solid #444; /* เพิ่มเส้นขอบให้การ์ด */
+}
+
+/* --- สไตล์สำหรับหัวข้อหลักของหน้า --- */
+.page-title {
+    color: #fff;
+    font-size: 34px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e75e8d;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.center-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+/* เขียนทับสีของ .btn-primary ให้เป็นสีชมพูของธีม */
+.btn-primary {
+  --bs-btn-bg: #e75e8d;
+  --bs-btn-border-color: #e75e8d;
+  --bs-btn-hover-bg: #d94a7c;
+  --bs-btn-hover-border-color: #d94a7c;
+}
+
+/* ปรับสี Alert ให้เข้ากับ Dark Mode */
+.alert-danger {
+    background-color: #4a2126;
+    color: #f8d7da;
+    border-color: #8c2f39;
+}
+.alert-success {
+    background-color: #1c3a24;
+    color: #d4edda;
+    border-color: #3b6d4a;
+}
+
+/* ===================================================================
+   2. LAYOUT COMPONENTS (Header, Footer)
+   =================================================================== */
+
+header {
+    background-color: #27292a;
+    border-bottom: 1px solid rgba(231, 94, 141, 0.5);
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+footer {
+    background-color: #27292a;
+    border-top: 1px solid rgba(231, 94, 141, 0.5);
+}
+
+
+/* ===================================================================
+   3. UNIQUE COMPONENTS (Star Rating, Comments)
+   =================================================================== */
+
+/* --- ระบบโหวตดาว (Star Rating) --- */
+.star-rating {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    font-size: 2.5em;
+    justify-content: flex-end;
+}
+.star-rating input[type="radio"] { display: none; }
+.star-rating label {
+    color: #444;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.star-rating:hover label,
+.star-rating label:hover ~ label { color: #e75e8d; }
+.star-rating input[type="radio"]:checked ~ label { color: #e75e8d; }
+
+.vote-form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- ส่วนคอมเมนต์ (Comment Section) --- */
+/* เราใช้ Bootstrap Card (.card.bg-dark) เป็นกรอบหลักแล้ว จึงไม่ต้องการ .comments-area อีก */
+
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+.comment-item:not(:last-child) {
+    /* เส้นแบ่งถูกจัดการด้วย .border-bottom ของ Bootstrap แล้ว */
+}
+.comment-meta a { color: #fff; }
+.comment-meta a:hover { color: #e75e8d; }
+.comment-text { color: #eee; }
+
+
+/* ===================================================================
+   4. PAGE-SPECIFIC STYLES (Index, Book Detail, Weekly Vote)
+   =================================================================== */
+
+/* --- หน้าแรก (Index Page) --- */
+.main-banner {
+    background-color: #27292a;
+    border-radius: 20px;
+    padding: 60px;
+    text-align: center;
+}
+.main-banner h4 {
+    color: #e75e8d;
+    font-size: 20px;
+    font-style: italic;
+}
+.main-banner h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+.main-banner h1 span { color: #e75e8d; }
+
+/* --- หน้า Weekly Vote --- */
+.book-cover-img {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    width: 100%;
+}
+.star-rating.justify-content-center {
+    justify-content: center !important;
+}
+
+/* --- หน้า Admin Dashboard --- */
+.display-4 {
+    color: #e75e8d; /* ทำให้ตัวเลขสถิติเป็นสีชมพู */
+}
