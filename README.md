@@ -39,11 +39,3 @@ Notes
 - Database config should be set in `.env` (do not commit your real credentials).
 - The application stores uploaded images in `ReadTogether/uploads/` — these are user-generated files and may contain personal data. Consider removing them from the repository or regenerating demo images before sharing publicly.
 
-What I changed in this PR
-- Added README, .gitignore, .env.example, schema.sql, LICENSE
-- Updated `ReadTogether/db.php` to read DB config from environment variables
-
-For your resume
-- Project: ReadTogether — Community for book lovers (PHP, MySQL, Bootstrap)
-- Role: Backend developer — Implemented user registration, book management, voting system, and basic admin dashboard
-- Notes: Include link to this repository and a screenshot of the running app (add images/screenshot-home.png to the `ReadTogether/images/` folder and I'll commit it for you)
